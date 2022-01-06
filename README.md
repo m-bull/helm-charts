@@ -5,16 +5,15 @@ Helm's [documentation](https://helm.sh/docs) to get started.
 
 Once Helm has been set up correctly, add the repo as follows:
 
-  helm repo add m-bull  https://m-bull.github.io/helm-charts
+`helm repo add m-bull https://m-bull.github.io/helm-charts`
 
 If you had already added this repo earlier, run `helm repo update` to retrieve
-the latest versions of the packages.  You can then run `helm search repo
-<alias>` to see the charts.
+the latest versions of the packages. You can then run `helm search repo m-bull` to see the charts.
 
 To install the <chart-name> chart:
 
-    helm install <chart-name> <alias>/<chart-name>
+    `helm install <chart-name> m-bull/<chart-name>`
 
 To uninstall the chart:
 
-    helm delete <chart-name>
+    `helm delete <chart-name>`
