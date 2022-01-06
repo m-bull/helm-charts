@@ -1,0 +1,53 @@
+---
+
+# Set values in dependent jupyterhub
+jupyterhub:
+# custom can contain anything you want to pass to the hub pod, as all passed
+# Helm template values will be made available there.
+  custom: {}
+  hub:
+    config:
+      JupyterHub:
+        authenticator_class: nativeauthenticator.NativeAuthenticator
+        admin_access: false
+      Authenticator:
+        admin_users:
+          - admin
+      NativeAuthenticator:
+        enable_signup: true
+        minimum_password_length: 10
+        check_common_password: true
+        ask_email_on_signup: false
+        allow_2fa: false
+# singleuser relates to the configuration of KubeSpawner which runs in the hub
+# pod, and its spawning of user pods such as jupyter-myusername.
+  singleuser:
+    defaultUrl: "/lab"
+    extraEnv:
+      JUPYTERHUB_SINGLEUSER_APP: "jupyter_server.serverapp.ServerApp"
+    profileList:
+      - display_name: "Python environment (minimal)"
+        description: "Minimal Python environment"
+        default: true
+        kubespawner_override:
+          image: jupyter/minimal-notebook:latest
+      - display_name: "Spark environment"
+        description: "Python, R, and Scala support for Apache Spark."
+        kubespawner_override:
+          image: jupyter/all-spark-notebook:latest
+    memory:
+      limit: "1G"
+      guarantee: "1G"
+    cpu:
+      limit: .5
+      guarantee: .5
+    storage:
+      capacity: "10Gi"
+      extraVolumes:
+        - name: jupyterhub-taxi
+          persistentVolumeClaim:
+            claimName: taxi-demo-data
+      extraVolumeMounts:
+        - name: jupyterhub-taxi
+          mountPath: /home/jovyan/taxi-data
+

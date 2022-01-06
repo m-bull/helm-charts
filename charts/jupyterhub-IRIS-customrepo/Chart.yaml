@@ -1,0 +1,15 @@
+apiVersion: v2
+name: jupyterhub-IRIS-customrepo
+description: Jupyterhub with staged data from a git repository
+home: https://z2jh.jupyter.org
+icon: https://jupyter.org/assets/hublogo.svg
+kubeVersion: '>=1.14.0-0'
+type: application
+version: 0.0.3
+appVersion: "1.5.0"
+dependencies:
+- name: jupyterhub
+  # This is the version of the *chart* not the version
+  # of the app.
+  version: "1.2.0"
+  repository: "https://jupyterhub.github.io/helm-chart/"
