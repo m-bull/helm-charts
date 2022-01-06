@@ -1,0 +1,57 @@
+apiVersion: v1
+entries:
+  jupyterhub-IRIS:
+  - apiVersion: v2
+    appVersion: 1.5.0
+    created: "2022-01-06T17:51:24.883577515Z"
+    dependencies:
+    - name: jupyterhub
+      repository: https://jupyterhub.github.io/helm-chart/
+      version: 1.2.0
+    description: Multi-user Jupyter installation for IRIS
+    digest: 0afc9f08b8a40795cac5b98f075a79740fc4efd74ae98d5739852f30f0b2363b
+    home: https://z2jh.jupyter.org
+    icon: https://jupyter.org/assets/hublogo.svg
+    kubeVersion: '>=1.14.0-0'
+    name: jupyterhub-IRIS
+    type: application
+    urls:
+    - https://github.com/m-bull/helm-charts/releases/download/jupyterhub-IRIS-0.1.10/jupyterhub-IRIS-0.1.10.tgz
+    version: 0.1.10
+  jupyterhub-IRIS-customrepo:
+  - apiVersion: v2
+    appVersion: 1.5.0
+    created: "2022-01-06T17:51:25.008222312Z"
+    dependencies:
+    - name: jupyterhub
+      repository: https://jupyterhub.github.io/helm-chart/
+      version: 1.2.0
+    description: Jupyterhub with staged data from a git repository
+    digest: fb0bdb89c87b8f491f1cde211b84afba151abb7e3927c7b69b2b4bff3aa51018
+    home: https://z2jh.jupyter.org
+    icon: https://jupyter.org/assets/hublogo.svg
+    kubeVersion: '>=1.14.0-0'
+    name: jupyterhub-IRIS-customrepo
+    type: application
+    urls:
+    - https://github.com/m-bull/helm-charts/releases/download/jupyterhub-IRIS-customrepo-0.0.3/jupyterhub-IRIS-customrepo-0.0.3.tgz
+    version: 0.0.3
+  jupyterhub-IRIS-taxidata:
+  - apiVersion: v2
+    appVersion: 1.5.0
+    created: "2022-01-06T17:51:25.14579498Z"
+    dependencies:
+    - name: jupyterhub
+      repository: https://jupyterhub.github.io/helm-chart/
+      version: 1.2.0
+    description: Jupyterhub with preconfigured taxi trip data
+    digest: a4f7ba1319a7eb7f8490e227972e4f882eff2987778c327e54f1b571a7fee3d0
+    home: https://z2jh.jupyter.org
+    icon: https://jupyter.org/assets/hublogo.svg
+    kubeVersion: '>=1.14.0-0'
+    name: jupyterhub-IRIS-taxidata
+    type: application
+    urls:
+    - https://github.com/m-bull/helm-charts/releases/download/jupyterhub-IRIS-taxidata-0.0.3/jupyterhub-IRIS-taxidata-0.0.3.tgz
+    version: 0.0.3
+generated: "2022-01-06T17:51:24.7376919Z"
